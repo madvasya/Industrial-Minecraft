@@ -1,0 +1,22 @@
+{
+  "minecraft:story/obtain_armor": {
+    "criteria": {
+      "iron_boots": "2021-10-09 13:51:23 +0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "forest": "2021-10-09 13:46:57 +0300",
+      "swampland": "2021-10-09 13:46:46 +0300",
+      "desert_hills": "2021-10-09 13:47:22 +0300",
+      "savanna": "2021-10-09 13:48:48 +0300",
+      "plains": "2021-10-09 13:45:02 +0300",
+      "extreme_hills": "2021-10-09 13:45:50 +0300",
+      "roofed_forest": "2021-10-09 13:45:31 +0300",
+      "river": "2021-10-09 13:45:29 +0300",
+      "desert": "2021-10-09 13:47:10 +0300"
+    },
+    "done": false
+  }
+}

@@ -1,0 +1,219 @@
+---- Minecraft Crash Report ----
+
+WARNING: coremods are present:
+  ClientFixer (clientfixer-1.12.2-1.9.jar)
+  CTMCorePlugin (ctm-mc1.12-0.3.0.15.jar)
+  RBLoadingPlugin (RealBench-1.12.2-1.3.3.jar)
+  OpenModsCorePlugin (OpenModsLib-1.12.2-0.11.5.jar)
+Contact their authors BEFORE contacting forge
+
+// Shall we play a game?
+
+Time: 10/8/21 11:23 PM
+Description: Updating screen events
+
+java.lang.OutOfMemoryError: Java heap space
+	at com.google.common.util.concurrent.AbstractFuture.setException(AbstractFuture.java:675)
+	at com.google.common.util.concurrent.SettableFuture.setException(SettableFuture.java:54)
+	at com.google.common.cache.LocalCache$LoadingValueReference.setException(LocalCache.java:3690)
+	at com.google.common.cache.LocalCache$LoadingValueReference.loadFuture(LocalCache.java:3735)
+	at com.google.common.cache.LocalCache$Segment.loadSync(LocalCache.java:2424)
+	at com.google.common.cache.LocalCache$Segment.lockedGetOrLoad(LocalCache.java:2298)
+	at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2211)
+	at com.google.common.cache.LocalCache.get(LocalCache.java:4154)
+	at com.google.common.cache.LocalCache.getOrLoad(LocalCache.java:4158)
+	at com.google.common.cache.LocalCache$LocalLoadingCache.get(LocalCache.java:5147)
+	at com.google.common.cache.LocalCache$LocalLoadingCache.getUnchecked(LocalCache.java:5153)
+	at net.minecraftforge.client.model.ModelLoader$VanillaModelWrapper.bake(ModelLoader.java:444)
+	at net.minecraftforge.client.model.ModelLoader$WeightedRandomModel.bake(ModelLoader.java:738)
+	at net.minecraftforge.client.model.ModelLoader.func_177570_a(ModelLoader.java:193)
+	at net.minecraft.client.renderer.block.model.ModelManager.func_110549_a(ModelManager.java:28)
+	at net.minecraft.client.resources.SimpleReloadableResourceManager.func_110544_b(SimpleReloadableResourceManager.java:131)
+	at net.minecraft.client.resources.SimpleReloadableResourceManager.func_110541_a(SimpleReloadableResourceManager.java:112)
+	at net.minecraft.client.Minecraft.func_110436_a(Minecraft.java:806)
+	at net.minecraft.client.Minecraft$15.run(Minecraft.java:2755)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at net.minecraft.client.Minecraft.func_152343_a(Minecraft.java:3142)
+	at net.minecraft.client.Minecraft.func_152344_a(Minecraft.java:3164)
+	at net.minecraft.client.Minecraft.func_175603_A(Minecraft.java:2751)
+	at shadersmod.client.Shaders.loadShaderPack(Shaders.java:1095)
+	at shadersmod.client.Shaders.setShaderPack(Shaders.java:1009)
+	at shadersmod.client.GuiSlotShaders.selectIndex(GuiSlotShaders.java:89)
+	at shadersmod.client.GuiSlotShaders.func_148144_a(GuiSlotShaders.java:79)
+	at net.minecraft.client.gui.GuiSlot.func_178039_p(GuiSlot.java:323)
+	at shadersmod.client.GuiShaders.func_146274_d(GuiShaders.java:114)
+	at net.minecraft.client.gui.GuiScreen.func_146269_k(GuiScreen.java:501)
+	at net.minecraft.client.Minecraft.func_71407_l(Minecraft.java:1757)
+	at net.minecraft.client.Minecraft.func_71411_J(Minecraft.java:1096)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at com.google.common.util.concurrent.AbstractFuture.setException(AbstractFuture.java:675)
+	at com.google.common.util.concurrent.SettableFuture.setException(SettableFuture.java:54)
+	at com.google.common.cache.LocalCache$LoadingValueReference.setException(LocalCache.java:3690)
+	at com.google.common.cache.LocalCache$LoadingValueReference.loadFuture(LocalCache.java:3735)
+	at com.google.common.cache.LocalCache$Segment.loadSync(LocalCache.java:2424)
+	at com.google.common.cache.LocalCache$Segment.lockedGetOrLoad(LocalCache.java:2298)
+	at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2211)
+	at com.google.common.cache.LocalCache.get(LocalCache.java:4154)
+	at com.google.common.cache.LocalCache.getOrLoad(LocalCache.java:4158)
+	at com.google.common.cache.LocalCache$LocalLoadingCache.get(LocalCache.java:5147)
+	at com.google.common.cache.LocalCache$LocalLoadingCache.getUnchecked(LocalCache.java:5153)
+	at net.minecraftforge.client.model.ModelLoader$VanillaModelWrapper.bake(ModelLoader.java:444)
+	at net.minecraftforge.client.model.ModelLoader$WeightedRandomModel.bake(ModelLoader.java:738)
+	at net.minecraftforge.client.model.ModelLoader.func_177570_a(ModelLoader.java:193)
+	at net.minecraft.client.renderer.block.model.ModelManager.func_110549_a(ModelManager.java:28)
+	at net.minecraft.client.resources.SimpleReloadableResourceManager.func_110544_b(SimpleReloadableResourceManager.java:131)
+	at net.minecraft.client.resources.SimpleReloadableResourceManager.func_110541_a(SimpleReloadableResourceManager.java:112)
+	at net.minecraft.client.Minecraft.func_110436_a(Minecraft.java:806)
+	at net.minecraft.client.Minecraft$15.run(Minecraft.java:2755)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at net.minecraft.client.Minecraft.func_152343_a(Minecraft.java:3142)
+	at net.minecraft.client.Minecraft.func_152344_a(Minecraft.java:3164)
+
+-- Affected screen --
+Details:
+	Screen name: shadersmod.client.GuiShaders
+Stacktrace:
+	at net.minecraft.client.Minecraft.func_71407_l(Minecraft.java:1762)
+	at net.minecraft.client.Minecraft.func_71411_J(Minecraft.java:1096)
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:397)
+	at net.minecraft.client.main.Main.main(SourceFile:123)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityPlayerSP['vasos'/1067, l='MpServer', x=-378.74, y=75.00, z=535.30]]
+	Chunk stats: MultiplayerChunkCache: 2809, 2809
+	Level seed: 0
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (-256,64,140), Chunk: (at 0,4,12 in -16,8; contains blocks -256,0,128 to -241,255,143), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Level time: 2138069 game time, 2330932 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+	Forced entities: 53 total; [EntityBat['Летучая мышь'/19471, l='MpServer', x=-343.57, y=58.34, z=578.25], EntityBat['Летучая мышь'/19472, l='MpServer', x=-320.25, y=30.13, z=587.43], EntityLatchedRenderer['неизвестно'/19506, l='MpServer', x=-378.74, y=75.00, z=535.30], EntityLatchedRenderer['неизвестно'/19507, l='MpServer', x=-378.74, y=75.00, z=535.30], EntityLatchedRenderer['неизвестно'/19508, l='MpServer', x=-378.74, y=75.00, z=535.30], EntityLatchedRenderer['неизвестно'/19509, l='MpServer', x=-378.74, y=75.00, z=535.30], EntityLatchedRenderer['неизвестно'/19510, l='MpServer', x=-378.74, y=75.00, z=535.30], EntityLatchedRenderer['неизвестно'/19511, l='MpServer', x=-378.74, y=75.00, z=535.30], EntityLatchedRenderer['неизвестно'/19512, l='MpServer', x=-378.74, y=75.00, z=535.30], EntityLatchedRenderer['неизвестно'/19513, l='MpServer', x=-378.74, y=75.00, z=535.30], EntityLatchedRenderer['неизвестно'/19514, l='MpServer', x=-378.74, y=75.00, z=535.30], EntityLatchedRenderer['неизвестно'/19515, l='MpServer', x=-378.74, y=75.00, z=535.30], EntityLatchedRenderer['неизвестно'/19516, l='MpServer', x=-378.74, y=75.00, z=535.30], EntityLatchedRenderer['неизвестно'/19517, l='MpServer', x=-378.74, y=75.00, z=535.30], EntityLatchedRenderer['неизвестно'/19518, l='MpServer', x=-378.74, y=75.00, z=535.30], EntityLatchedRenderer['неизвестно'/19519, l='MpServer', x=-378.74, y=75.00, z=535.30], EntityLatchedRenderer['неизвестно'/19520, l='MpServer', x=-378.74, y=75.00, z=535.30], EntityLatchedRenderer['неизвестно'/19521, l='MpServer', x=-378.74, y=75.00, z=535.30], EntityLatchedRenderer['неизвестно'/19522, l='MpServer', x=-378.74, y=75.00, z=535.30], EntityBoat['Лодка'/1109, l='MpServer', x=-320.55, y=62.52, z=513.31], EntityItem['item.item.egg'/17589, l='MpServer', x=-420.98, y=84.00, z=531.32], EntityItem['item.item.egg'/17653, l='MpServer', x=-419.88, y=86.00, z=553.13], EntityItem['item.item.egg'/18710, l='MpServer', x=-430.42, y=93.00, z=543.52], EntityPlayerSP['vasos'/1067, l='MpServer', x=-378.74, y=75.00, z=535.30], EntityBat['Летучая мышь'/18996, l='MpServer', x=-315.20, y=48.03, z=555.61], EntitySheep['Овца'/10873, l='MpServer', x=-450.03, y=81.00, z=492.57], EntitySheep['Овца'/10874, l='MpServer', x=-447.59, y=80.00, z=485.21], EntityChicken['Курица'/10920, l='MpServer', x=-459.46, y=90.00, z=525.45], EntityChicken['Курица'/10922, l='MpServer', x=-458.50, y=83.00, z=519.13], EntitySheep['Овца'/10923, l='MpServer', x=-459.68, y=85.00, z=521.52], EntityChicken['Курица'/10947, l='MpServer', x=-421.20, y=85.00, z=530.49], EntityChicken['Курица'/10948, l='MpServer', x=-456.62, y=87.00, z=532.80], EntityBat['Летучая мышь'/19154, l='MpServer', x=-339.34, y=32.08, z=550.48], EntityChicken['Курица'/10964, l='MpServer', x=-450.13, y=93.00, z=550.49], EntityChicken['Курица'/10975, l='MpServer', x=-419.46, y=86.00, z=553.88], EntityChicken['Курица'/10976, l='MpServer', x=-430.13, y=94.00, z=544.47], EntityChicken['Курица'/10977, l='MpServer', x=-428.50, y=99.00, z=554.44], EntityPig['Свинья'/10978, l='MpServer', x=-333.77, y=71.00, z=572.51], EntityPig['Свинья'/10979, l='MpServer', x=-330.50, y=71.00, z=575.75], EntityPig['Свинья'/11006, l='MpServer', x=-335.57, y=75.00, z=578.50], EntityPig['Свинья'/11007, l='MpServer', x=-341.54, y=71.00, z=572.71], EntitySquid['Спрут'/19247, l='MpServer', x=-336.60, y=59.00, z=495.60], EntitySquid['Спрут'/19248, l='MpServer', x=-337.48, y=60.67, z=489.90], EntitySquid['Спрут'/19249, l='MpServer', x=-337.47, y=61.23, z=489.06], EntitySquid['Спрут'/19250, l='MpServer', x=-338.97, y=60.11, z=491.67], EntityLatchedRenderer['неизвестно'/18239, l='MpServer', x=-378.74, y=75.00, z=535.30], EntityBat['Летучая мышь'/19331, l='MpServer', x=-322.70, y=25.00, z=559.35], EntityBat['Летучая мышь'/19336, l='MpServer', x=-397.03, y=13.84, z=607.25], EntityBat['Летучая мышь'/19353, l='MpServer', x=-347.37, y=49.47, z=569.46], EntityBat['Летучая мышь'/19354, l='MpServer', x=-349.28, y=48.75, z=563.88], EntityBat['Летучая мышь'/19355, l='MpServer', x=-346.47, y=51.04, z=573.19], EntityBat['Летучая мышь'/19356, l='MpServer', x=-362.43, y=48.67, z=613.45], EntityBat['Летучая мышь'/19409, l='MpServer', x=-305.21, y=31.16, z=589.14]]
+	Retry entities: 0 total; []
+	Server brand: fml,forge
+	Server type: Integrated singleplayer server
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_51, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 274817944 bytes (262 MB) / 3154116608 bytes (3008 MB) up to 3154116608 bytes (3008 MB)
+	JVM Flags: 8 total; -Xmn128M -Xmx3000M -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M
+	IntCache: cache: 0, tcache: 2, allocated: 14, tallocated: 94
+	FML: MCP 9.42 Powered by Forge 14.23.3.2678 Optifine OptiFine_1.12.2_HD_U_D2 63 mods loaded, 63 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State          | ID                    | Version           | Source                                          | Signature                                |
+	|:-------------- |:--------------------- |:----------------- |:----------------------------------------------- |:---------------------------------------- |
+	| UCHIJAAAAAAAAA | minecraft             | 1.12.2            | minecraft.jar                                   | None                                     |
+	| UCHIJAAAAAAAAA | mcp                   | 9.42              | minecraft.jar                                   | None                                     |
+	| UCHIJAAAAAAAAA | FML                   | 8.0.99.99         | forge-1.12.2-14.23.3.2678.jar                   | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| UCHIJAAAAAAAAA | forge                 | 14.23.3.2678      | forge-1.12.2-14.23.3.2678.jar                   | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| UCHIJAAAAAAAAA | openmodscore          | 0.11.5            | minecraft.jar                                   | None                                     |
+	| UCHIJAAAAAAAAA | ClientFixer           | 1.12.2-1.9        | minecraft.jar                                   | None                                     |
+	| UCHIJAAAAAAAAA | ic2                   | 2.8.76-ex112      | industrialcraft-2-2.8.76-ex112.jar              | de041f9f6187debbc77034a344134053277aa3b0 |
+	| UCHIJAAAAAAAAA | advanced_solar_panels | 4.2.0             | Advanced+Solar+Panels-4.2.0.jar                 | None                                     |
+	| UCHIJAAAAAAAAA | appliedenergistics2   | rv5-stable-11     | appliedenergistics2-rv5-stable-11.jar           | None                                     |
+	| UCHIJAAAAAAAAA | bibliocraft           | 2.4.3             | BiblioCraft[v2.4.3][MC1.12.0].jar               | None                                     |
+	| UCHIJAAAAAAAAA | jei                   | 4.9.1.179         | jei_1.12.2-4.9.1.179.jar                        | None                                     |
+	| UCHIJAAAAAAAAA | blockdrops            | 1.4.0             | blockdrops-1.12.2-1.4.0.jar                     | None                                     |
+	| UCHIJAAAAAAAAA | codechickenlib        | 3.1.8.341         | CodeChickenLib-1.12.2-3.1.8.341-universal.jar   | f1850c39b2516232a2108a7bd84d1cb5df93b261 |
+	| UCHIJAAAAAAAAA | redstoneflux          | 2.0.1             | RedstoneFlux-1.12-2.0.1.2-universal.jar         | d4f1503fbacd9b9fb767720420c5395104239ec9 |
+	| UCHIJAAAAAAAAA | brandonscore          | 2.4.2             | BrandonsCore-1.12-2.4.2.157-universal.jar       | None                                     |
+	| UCHIJAAAAAAAAA | buildcraftlib         | 7.99.16           | buildcraft-7.99.16.jar                          | None                                     |
+	| UCHIJAAAAAAAAA | buildcraftcore        | 7.99.16           | buildcraft-7.99.16.jar                          | None                                     |
+	| UCHIJAAAAAAAAA | buildcraftbuilders    | 7.99.16           | buildcraft-7.99.16.jar                          | None                                     |
+	| UCHIJAAAAAAAAA | buildcraftenergy      | 7.99.16           | buildcraft-7.99.16.jar                          | None                                     |
+	| UCHIJAAAAAAAAA | buildcraftfactory     | 7.99.16           | buildcraft-7.99.16.jar                          | None                                     |
+	| UCHIJAAAAAAAAA | buildcraftrobotics    | 7.99.16           | buildcraft-7.99.16.jar                          | None                                     |
+	| UCHIJAAAAAAAAA | buildcrafttransport   | 7.99.16           | buildcraft-7.99.16.jar                          | None                                     |
+	| UCHIJAAAAAAAAA | buildcraftsilicon     | 7.99.16           | buildcraft-7.99.16.jar                          | None                                     |
+	| UCHIJAAAAAAAAA | ceramics              | 1.12-1.3.4        | Ceramics-1.12-1.3.4.jar                         | None                                     |
+	| UCHIJAAAAAAAAA | chameleon             | 1.12-4.1.3        | Chameleon-1.12-4.1.3.jar                        | None                                     |
+	| UCHIJAAAAAAAAA | chickenchunks         | 2.4.1.71          | ChickenChunks-1.12.2-2.4.1.71-universal.jar     | f1850c39b2516232a2108a7bd84d1cb5df93b261 |
+	| UCHIJAAAAAAAAA | ctm                   | MC1.12-0.3.0.15   | ctm-mc1.12-0.3.0.15.jar                         | None                                     |
+	| UCHIJAAAAAAAAA | chisel                | MC1.12.2-0.2.0.31 | Chisel-MC1.12.2-0.2.0.31.jar                    | None                                     |
+	| UCHIJAAAAAAAAA | classiccombat         | 1.0.0             | ClassicCombat-1.12-1.0.0.jar                    | None                                     |
+	| UCHIJAAAAAAAAA | cofhcore              | 4.4.1             | CoFHCore-1.12.2-4.4.1.12-universal.jar          | None                                     |
+	| UCHIJAAAAAAAAA | compactsolars         | 1.12.2-5.0.17.340 | CompactSolars-1.12.2-5.0.17.340-universal.jar   | None                                     |
+	| UCHIJAAAAAAAAA | cucumber              | 1.1.0             | cucumber-1.12-1.1.0.jar                         | None                                     |
+	| UCHIJAAAAAAAAA | waila                 | 1.8.25            | Hwyla-1.8.25-B40_1.12.jar                       | None                                     |
+	| UCHIJAAAAAAAAA | extracells            | 2.5.13            | ExtraCells-1.12.2-2.5.13a56.jar                 | None                                     |
+	| UCHIJAAAAAAAAA | forestry              | 5.8.0.290         | forestry_1.12.2-5.8.0.290.jar                   | None                                     |
+	| UCHIJAAAAAAAAA | cfm                   | 4.2.0             | furniture-4.2.0-1.12.2.jar                      | None                                     |
+	| UCHIJAAAAAAAAA | gravestone            | 1.0.15            | GraveStone-1.12.2-Graves-1.0.15.jar             | None                                     |
+	| UCHIJAAAAAAAAA | gravestone-extended   | 1.3.0b6           | GraveStone-1.12.2-Extended-1.3.0b6.jar          | None                                     |
+	| UCHIJAAAAAAAAA | ichunutil             | 7.1.4             | iChunUtil-1.12.2-7.1.4.jar                      | None                                     |
+	| UCHIJAAAAAAAAA | ironbackpacks         | 1.12.2-3.0.7-10   | IronBackpacks-1.12.2-3.0.7-10.jar               | None                                     |
+	| UCHIJAAAAAAAAA | ironchest             | 1.12.2-7.0.42.827 | ironchest-1.12.2-7.0.42.827.jar                 | None                                     |
+	| UCHIJAAAAAAAAA | harvestcraft          | 1.12.2u           | Pam's+HarvestCraft+1.12.2u.jar                  | None                                     |
+	| UCHIJAAAAAAAAA | jehc                  | 1.12.2            | JEHC-1.12.2-1.5.1.0.jar                         | None                                     |
+	| UCHIJAAAAAAAAA | jeibees               | 0.9.0.5           | jeibees-0.9.0.5-mc1.12.2.jar                    | None                                     |
+	| UCHIJAAAAAAAAA | jeivillagers          | 1.0               | jeivillagers-1.12-1.0.2.jar                     | None                                     |
+	| UCHIJAAAAAAAAA | journeymap            | 1.12.2-5.5.2      | journeymap-1.12.2-5.5.2.jar                     | None                                     |
+	| UCHIJAAAAAAAAA | jeresources           | 0.8.7.41          | JustEnoughResources-1.12.2-0.8.7.41.jar         | None                                     |
+	| UCHIJAAAAAAAAA | mantle                | 1.12-1.3.2.24     | Mantle-1.12-1.3.2.24.jar                        | None                                     |
+	| UCHIJAAAAAAAAA | mcjtylib_ng           | 2.6.7             | mcjtylib-1.12-2.6.7.jar                         | None                                     |
+	| UCHIJAAAAAAAAA | mobamputation         | 7.0.0             | MobAmputation-1.12.2-7.0.0.jar                  | None                                     |
+	| UCHIJAAAAAAAAA | morebees              | 1.12.2-1.4.4      | morebees-1.12.2-1.4.4.jar                       | None                                     |
+	| UCHIJAAAAAAAAA | mousetweaks           | 2.8               | MouseTweaks-2.8-mc1.12.1.jar                    | None                                     |
+	| UCHIJAAAAAAAAA | openmods              | 0.11.5            | OpenModsLib-1.12.2-0.11.5.jar                   | d2a9a8e8440196e26a268d1f3ddc01b2e9c572a5 |
+	| UCHIJAAAAAAAAA | storagedrawers        | 1.12-5.3.5        | StorageDrawers-1.12.2-5.3.6.jar                 | None                                     |
+	| UCHIJAAAAAAAAA | thermalfoundation     | 2.4.1             | ThermalFoundation-1.12.2-2.4.1.15-universal.jar | 8a6abf2cb9e141b866580d369ba6548732eff25f |
+	| UCHIJAAAAAAAAA | thermalexpansion      | 5.4.2             | ThermalExpansion-1.12.2-5.4.2.27-universal.jar  | 8a6abf2cb9e141b866580d369ba6548732eff25f |
+	| UCHIJAAAAAAAAA | thermalcultivation    | 0.2.0             | ThermalCultivation-1.12.2-0.2.0.6-universal.jar | 8a6abf2cb9e141b866580d369ba6548732eff25f |
+	| UCHIJAAAAAAAAA | thermalsolars         | 1.12.2 V1.6       | thermalsolars-1.12.2-1.6.jar                    | None                                     |
+	| UCHIJAAAAAAAAA | torohealthmod         | 1.12.2-11         | torohealth-1.12.2-11.jar                        | None                                     |
+	| UCHIJAAAAAAAAA | treechopper           | 1.2.4             | TreeChopper-1.12.2-1.2.4.jar                    | None                                     |
+	| UCHIJAAAAAAAAA | villagenames          | 2.0               | VillageNames-1.12.2-2.0.jar                     | None                                     |
+	| UCHIJAAAAAAAAA | wailaharvestability   | 1.1.12            | WailaHarvestability-mc1.12-1.1.12.jar           | None                                     |
+	| UCHIJAAAAAAAAA | wawla                 | 2.5.253           | Wawla-1.12.2-2.5.253.jar                        | d476d1b22b218a10d845928d1665d45fce301b27 |
+
+	Loaded coremods (and transformers): 
+ClientFixer (clientfixer-1.12.2-1.9.jar)
+  com.gamerforea.clientfixer.asm.ASMTransformer
+CTMCorePlugin (ctm-mc1.12-0.3.0.15.jar)
+  team.chisel.ctm.client.asm.CTMTransformer
+RBLoadingPlugin (RealBench-1.12.2-1.3.3.jar)
+  pw.prok.realbench.asm.RBTransformer
+OpenModsCorePlugin (OpenModsLib-1.12.2-0.11.5.jar)
+  openmods.core.OpenModsClassTransformer
+	GL info: ' Vendor: 'NVIDIA Corporation' Version: '4.6.0 NVIDIA 472.12' Renderer: 'NVIDIA GeForce GTX 1060 3GB/PCIe/SSE2'
+	OpenModsLib class transformers: [llama_null_fix:FINISHED],[horse_base_null_fix:FINISHED],[pre_world_render_hook:FINISHED],[player_render_hook:FINISHED],[horse_null_fix:FINISHED]
+	AE2 Version: stable rv5-stable-11 for Forge 14.23.1.2554
+	AE2 Integration: IC2:ON, RC:OFF, MFR:OFF, Waila:ON, InvTweaks:OFF, JEI:ON, Mekanism:OFF, OpenComputers:OFF, THE_ONE_PROBE:OFF, TESLA:OFF, CRAFTTWEAKER:OFF
+	Launched Version: 1.12.2-forge1.12.2-14.23.3.2678
+	LWJGL: 2.9.4
+	OpenGL: NVIDIA GeForce GTX 1060 3GB/PCIe/SSE2 GL version 4.6.0 NVIDIA 472.12, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: Русский (Россия)
+	Profiler Position: N/A (disabled)
+	CPU: 4x Intel(R) Core(TM) i5-6400 CPU @ 2.70GHz

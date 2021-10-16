@@ -1,0 +1,18 @@
+{
+  "id": "дохрена нефти_-674,62,-934",
+  "name": "дохрена нефти",
+  "icon": "waypoint-normal.png",
+  "x": -674,
+  "y": 62,
+  "z": -934,
+  "r": 210,
+  "g": 81,
+  "b": 78,
+  "enable": true,
+  "type": "Normal",
+  "origin": "journeymap",
+  "dimensions": [
+    0
+  ],
+  "persistent": true
+}

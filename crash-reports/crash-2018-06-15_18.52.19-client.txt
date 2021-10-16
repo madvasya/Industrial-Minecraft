@@ -1,0 +1,230 @@
+---- Minecraft Crash Report ----
+
+WARNING: coremods are present:
+  ClientFixer (clientfixer-1.12.2-1.9.jar)
+  CTMCorePlugin (ctm-mc1.12-0.3.0.15.jar)
+  RBLoadingPlugin (RealBench-1.12.2-1.3.3.jar)
+  LoadingPlugin (RandomThings-MC1.12.2-4.1.6.jar)
+  OpenModsCorePlugin (OpenModsLib-1.12.2-0.11.5.jar)
+  TheBetweenlandsLoadingPlugin (TheBetweenlands-3.3.8-core.jar)
+Contact their authors BEFORE contacting forge
+
+// You should try our sister game, Minceraft!
+
+Time: 6/15/18 6:52 PM
+Description: Unexpected error
+
+java.lang.NoClassDefFoundError: thebetweenlands/client/ClientHooks
+	at net.minecraft.client.renderer.EntityRenderer.func_181560_a(EntityRenderer.java:1398)
+	at net.minecraft.client.Minecraft.func_71411_J(Minecraft.java:1117)
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:397)
+	at net.minecraft.client.main.Main.main(SourceFile:123)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+Caused by: java.lang.ClassNotFoundException: thebetweenlands.client.ClientHooks
+	at net.minecraft.launchwrapper.LaunchClassLoader.findClass(LaunchClassLoader.java:191)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 10 more
+Caused by: java.lang.NullPointerException
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.func_72914_a(WorldClient.java:532)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityPlayerSP['vasos'/1235, l='MpServer', x=-44.50, y=70.00, z=260.50]]
+	Chunk stats: MultiplayerChunkCache: 0, 0
+	Level seed: 0
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (-44,64,256), Chunk: (at 4,4,0 in -3,16; contains blocks -48,0,256 to -33,255,271), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Level time: 4 game time, 4 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+	Forced entities: 2 total; [EntityLatchedRenderer['неизвестно'/1877, l='MpServer', x=-44.50, y=70.00, z=260.50], EntityPlayerSP['vasos'/1235, l='MpServer', x=-44.50, y=70.00, z=260.50]]
+	Retry entities: 1 total; [EntityLatchedRenderer['неизвестно'/1877, l='MpServer', x=-44.50, y=70.00, z=260.50]]
+	Server brand: fml,forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.func_72914_a(WorldClient.java:532)
+	at net.minecraft.client.Minecraft.func_71396_d(Minecraft.java:2738)
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:426)
+	at net.minecraft.client.main.Main.main(SourceFile:123)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_171, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 1340477696 bytes (1278 MB) / 3025108992 bytes (2884 MB) up to 3207856128 bytes (3059 MB)
+	JVM Flags: 5 total; -Xmx3072M -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode -XX:-UseAdaptiveSizePolicy -Xmn128M
+	IntCache: cache: 0, tcache: 0, allocated: 15, tallocated: 95
+	FML: MCP 9.42 Powered by Forge 14.23.3.2678 Optifine OptiFine_1.12.2_HD_U_D2 69 mods loaded, 69 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State     | ID                    | Version           | Source                                          | Signature                                |
+	|:--------- |:--------------------- |:----------------- |:----------------------------------------------- |:---------------------------------------- |
+	| UCHIJAAAA | minecraft             | 1.12.2            | minecraft.jar                                   | None                                     |
+	| UCHIJAAAA | mcp                   | 9.42              | minecraft.jar                                   | None                                     |
+	| UCHIJAAAA | FML                   | 8.0.99.99         | forge-1.12.2-14.23.3.2678.jar                   | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| UCHIJAAAA | forge                 | 14.23.3.2678      | forge-1.12.2-14.23.3.2678.jar                   | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| UCHIJAAAA | openmodscore          | 0.11.5            | minecraft.jar                                   | None                                     |
+	| UCHIJAAAA | ClientFixer           | 1.12.2-1.9        | minecraft.jar                                   | None                                     |
+	| UCHIJAAAA | ic2                   | 2.8.76-ex112      | industrialcraft-2-2.8.76-ex112.jar              | de041f9f6187debbc77034a344134053277aa3b0 |
+	| UCHIJAAAA | advanced_solar_panels | 4.2.0             | Advanced+Solar+Panels-4.2.0.jar                 | None                                     |
+	| UCHIJAAAA | appliedenergistics2   | rv5-stable-11     | appliedenergistics2-rv5-stable-11.jar           | None                                     |
+	| UCHIJAAAA | battletowers          | 1.6.3             | BattleTowers-1.12.2.jar                         | None                                     |
+	| UCHIJAAAA | bibliocraft           | 2.4.3             | BiblioCraft[v2.4.3][MC1.12.0].jar               | None                                     |
+	| UCHIJAAAA | jei                   | 4.9.1.179         | jei_1.12.2-4.9.1.179.jar                        | None                                     |
+	| UCHIJAAAA | blockdrops            | 1.4.0             | blockdrops-1.12.2-1.4.0.jar                     | None                                     |
+	| UCHIJAAAA | codechickenlib        | 3.1.8.341         | CodeChickenLib-1.12.2-3.1.8.341-universal.jar   | f1850c39b2516232a2108a7bd84d1cb5df93b261 |
+	| UCHIJAAAA | redstoneflux          | 2.0.1             | RedstoneFlux-1.12-2.0.1.2-universal.jar         | d4f1503fbacd9b9fb767720420c5395104239ec9 |
+	| UCHIJAAAA | brandonscore          | 2.4.2             | BrandonsCore-1.12-2.4.2.157-universal.jar       | None                                     |
+	| UCHIJAAAA | buildcraftlib         | 7.99.16           | buildcraft-7.99.16.jar                          | None                                     |
+	| UCHIJAAAA | buildcraftcore        | 7.99.16           | buildcraft-7.99.16.jar                          | None                                     |
+	| UCHIJAAAA | buildcraftbuilders    | 7.99.16           | buildcraft-7.99.16.jar                          | None                                     |
+	| UCHIJAAAA | buildcraftenergy      | 7.99.16           | buildcraft-7.99.16.jar                          | None                                     |
+	| UCHIJAAAA | buildcraftfactory     | 7.99.16           | buildcraft-7.99.16.jar                          | None                                     |
+	| UCHIJAAAA | buildcraftrobotics    | 7.99.16           | buildcraft-7.99.16.jar                          | None                                     |
+	| UCHIJAAAA | buildcrafttransport   | 7.99.16           | buildcraft-7.99.16.jar                          | None                                     |
+	| UCHIJAAAA | buildcraftsilicon     | 7.99.16           | buildcraft-7.99.16.jar                          | None                                     |
+	| UCHIJAAAA | ctm                   | MC1.12-0.3.0.15   | ctm-mc1.12-0.3.0.15.jar                         | None                                     |
+	| UCHIJAAAA | chisel                | MC1.12.2-0.2.0.31 | Chisel-MC1.12.2-0.2.0.31.jar                    | None                                     |
+	| UCHIJAAAA | mantle                | 1.12-1.3.2.24     | Mantle-1.12-1.3.2.24.jar                        | None                                     |
+	| UCHIJAAAA | tconstruct            | 1.12.2-2.9.1.65   | TConstruct-1.12.2-2.9.1.65.jar                  | None                                     |
+	| UCHIJAAAA | ceramics              | 1.12-1.3.4        | Ceramics-1.12-1.3.4.jar                         | None                                     |
+	| UCHIJAAAA | chameleon             | 1.12-4.1.3        | Chameleon-1.12-4.1.3.jar                        | None                                     |
+	| UCHIJAAAA | chickenchunks         | 2.4.1.71          | ChickenChunks-1.12.2-2.4.1.71-universal.jar     | f1850c39b2516232a2108a7bd84d1cb5df93b261 |
+	| UCHIJAAAA | classiccombat         | 1.0.0             | ClassicCombat-1.12-1.0.0.jar                    | None                                     |
+	| UCHIJAAAA | cofhcore              | 4.4.1             | CoFHCore-1.12.2-4.4.1.12-universal.jar          | None                                     |
+	| UCHIJAAAA | compactsolars         | 1.12.2-5.0.17.340 | CompactSolars-1.12.2-5.0.17.340-universal.jar   | None                                     |
+	| UCHIJAAAA | cucumber              | 1.1.0             | cucumber-1.12-1.1.0.jar                         | None                                     |
+	| UCHIJAAAA | waila                 | 1.8.25            | Hwyla-1.8.25-B40_1.12.jar                       | None                                     |
+	| UCHIJAAAA | extracells            | 2.5.13            | ExtraCells-1.12.2-2.5.13a56.jar                 | None                                     |
+	| UCHIJAAAA | natura                | 1.12.2-4.3.2.49   | natura-1.12.2-4.3.2.49.jar                      | None                                     |
+	| UCHIJAAAA | forestry              | 5.8.0.290         | forestry_1.12.2-5.8.0.290.jar                   | None                                     |
+	| UCHIJAAAA | cfm                   | 4.2.0             | furniture-4.2.0-1.12.2.jar                      | None                                     |
+	| UCHIJAAAA | gravestone            | 1.0.15            | GraveStone-1.12.2-Graves-1.0.15.jar             | None                                     |
+	| UCHIJAAAA | gravestone-extended   | 1.3.0b6           | GraveStone-1.12.2-Extended-1.3.0b6.jar          | None                                     |
+	| UCHIJAAAA | ichunutil             | 7.1.4             | iChunUtil-1.12.2-7.1.4.jar                      | None                                     |
+	| UCHIJAAAA | ironbackpacks         | 1.12.2-3.0.7-10   | IronBackpacks-1.12.2-3.0.7-10.jar               | None                                     |
+	| UCHIJAAAA | ironchest             | 1.12.2-7.0.42.827 | ironchest-1.12.2-7.0.42.827.jar                 | None                                     |
+	| UCHIJAAAA | harvestcraft          | 1.12.2u           | Pam's+HarvestCraft+1.12.2u.jar                  | None                                     |
+	| UCHIJAAAA | jehc                  | 1.12.2            | JEHC-1.12.2-1.5.1.0.jar                         | None                                     |
+	| UCHIJAAAA | jeibees               | 0.9.0.5           | jeibees-0.9.0.5-mc1.12.2.jar                    | None                                     |
+	| UCHIJAAAA | jeivillagers          | 1.0               | jeivillagers-1.12-1.0.2.jar                     | None                                     |
+	| UCHIJAAAA | journeymap            | 1.12.2-5.5.2      | journeymap-1.12.2-5.5.2.jar                     | None                                     |
+	| UCHIJAAAA | jeresources           | 0.8.7.41          | JustEnoughResources-1.12.2-0.8.7.41.jar         | None                                     |
+	| UCHIJAAAA | mcjtylib_ng           | 2.6.7             | mcjtylib-1.12-2.6.7.jar                         | None                                     |
+	| UCHIJAAAA | mobamputation         | 7.0.0             | MobAmputation-1.12.2-7.0.0.jar                  | None                                     |
+	| UCHIJAAAA | morebees              | 1.12.2-1.4.4      | morebees-1.12.2-1.4.4.jar                       | None                                     |
+	| UCHIJAAAA | mousetweaks           | 2.8               | MouseTweaks-2.8-mc1.12.1.jar                    | None                                     |
+	| UCHIJAAAA | mysticalagriculture   | 1.6.9             | mysticalagriculture-1.12-1.6.9.jar              | None                                     |
+	| UCHIJAAAA | openmods              | 0.11.5            | OpenModsLib-1.12.2-0.11.5.jar                   | d2a9a8e8440196e26a268d1f3ddc01b2e9c572a5 |
+	| UCHIJAAAA | randomthings          | 4.1.6             | RandomThings-MC1.12.2-4.1.6.jar                 | d72e0dd57935b3e9476212aea0c0df352dd76291 |
+	| UCHIJAAAA | storagedrawers        | 1.12-5.3.5        | StorageDrawers-1.12.2-5.3.6.jar                 | None                                     |
+	| UCHIJAAAA | thermalfoundation     | 2.4.1             | ThermalFoundation-1.12.2-2.4.1.15-universal.jar | 8a6abf2cb9e141b866580d369ba6548732eff25f |
+	| UCHIJAAAA | thermalexpansion      | 5.4.2             | ThermalExpansion-1.12.2-5.4.2.27-universal.jar  | 8a6abf2cb9e141b866580d369ba6548732eff25f |
+	| UCHIJAAAA | thermalcultivation    | 0.2.0             | ThermalCultivation-1.12.2-0.2.0.6-universal.jar | 8a6abf2cb9e141b866580d369ba6548732eff25f |
+	| UCHIJAAAA | thermalsolars         | 1.12.2 V1.6       | thermalsolars-1.12.2-1.6.jar                    | None                                     |
+	| UCHIJAAAA | torohealthmod         | 1.12.2-11         | torohealth-1.12.2-11.jar                        | None                                     |
+	| UCHIJAAAA | treechopper           | 1.2.4             | TreeChopper-1.12.2-1.2.4.jar                    | None                                     |
+	| UCHIJAAAA | twilightforest        | 3.6.345           | twilightforest-1.12.2-3.6.345-universal.jar     | None                                     |
+	| UCHIJAAAA | villagenames          | 2.0               | VillageNames-1.12.2-2.0.jar                     | None                                     |
+	| UCHIJAAAA | wailaharvestability   | 1.1.12            | WailaHarvestability-mc1.12-1.1.12.jar           | None                                     |
+	| UCHIJAAAA | wawla                 | 2.5.253           | Wawla-1.12.2-2.5.253.jar                        | d476d1b22b218a10d845928d1665d45fce301b27 |
+
+	Loaded coremods (and transformers): 
+ClientFixer (clientfixer-1.12.2-1.9.jar)
+  com.gamerforea.clientfixer.asm.ASMTransformer
+CTMCorePlugin (ctm-mc1.12-0.3.0.15.jar)
+  team.chisel.ctm.client.asm.CTMTransformer
+RBLoadingPlugin (RealBench-1.12.2-1.3.3.jar)
+  pw.prok.realbench.asm.RBTransformer
+LoadingPlugin (RandomThings-MC1.12.2-4.1.6.jar)
+  lumien.randomthings.asm.ClassTransformer
+OpenModsCorePlugin (OpenModsLib-1.12.2-0.11.5.jar)
+  openmods.core.OpenModsClassTransformer
+TheBetweenlandsLoadingPlugin (TheBetweenlands-3.3.8-core.jar)
+  thebetweenlands.core.TheBetweenlandsClassTransformer
+	GL info: ' Vendor: 'NVIDIA Corporation' Version: '4.6.0 NVIDIA 391.24' Renderer: 'GeForce GTX 1060 3GB/PCIe/SSE2'
+	OpenModsLib class transformers: [llama_null_fix:FINISHED],[horse_base_null_fix:FINISHED],[pre_world_render_hook:FINISHED],[player_render_hook:FINISHED],[horse_null_fix:FINISHED]
+	AE2 Version: stable rv5-stable-11 for Forge 14.23.1.2554
+	Pulsar/tconstruct loaded Pulses: 
+		- TinkerCommons (Enabled/Forced)
+		- TinkerWorld (Enabled/Not Forced)
+		- TinkerTools (Enabled/Not Forced)
+		- TinkerHarvestTools (Enabled/Forced)
+		- TinkerMeleeWeapons (Enabled/Forced)
+		- TinkerRangedWeapons (Enabled/Forced)
+		- TinkerModifiers (Enabled/Forced)
+		- TinkerSmeltery (Enabled/Not Forced)
+		- TinkerGadgets (Enabled/Not Forced)
+		- TinkerOredict (Enabled/Forced)
+		- TinkerIntegration (Enabled/Forced)
+		- TinkerFluids (Enabled/Forced)
+		- TinkerMaterials (Enabled/Forced)
+		- TinkerModelRegister (Enabled/Forced)
+		- chiselIntegration (Enabled/Not Forced)
+		- wailaIntegration (Enabled/Not Forced)
+
+	Pulsar/natura loaded Pulses: 
+		- NaturaCommons (Enabled/Forced)
+		- NaturaOverworld (Enabled/Not Forced)
+		- NaturaNether (Enabled/Not Forced)
+		- NaturaDecorative (Enabled/Not Forced)
+		- NaturaTools (Enabled/Not Forced)
+		- NaturaEntities (Enabled/Not Forced)
+		- NaturaOredict (Enabled/Forced)
+		- NaturaWorld (Enabled/Not Forced)
+
+	AE2 Integration: IC2:ON, RC:OFF, MFR:OFF, Waila:ON, InvTweaks:OFF, JEI:ON, Mekanism:OFF, OpenComputers:OFF, THE_ONE_PROBE:OFF, TESLA:OFF, CRAFTTWEAKER:OFF
+	Launched Version: 1.12.2-forge1.12.2-14.23.3.2678
+	LWJGL: 2.9.4
+	OpenGL: GeForce GTX 1060 3GB/PCIe/SSE2 GL version 4.6.0 NVIDIA 391.24, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: Русский (Россия)
+	Profiler Position: N/A (disabled)
+	CPU: 4x Intel(R) Core(TM) i5-6400 CPU @ 2.70GHz
+	OptiFine Version: OptiFine_1.12.2_HD_U_D2
+	OptiFine Build: 20180430-132249
+	Render Distance Chunks: 8
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	Shaders: null
+	OpenGlVersion: 4.6.0 NVIDIA 391.24
+	OpenGlRenderer: GeForce GTX 1060 3GB/PCIe/SSE2
+	OpenGlVendor: NVIDIA Corporation
+	CpuCount: 4

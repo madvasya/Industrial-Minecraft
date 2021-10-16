@@ -1,0 +1,61 @@
+{
+  "remoteServerList": [],
+  "oldServer": [
+    {
+      "minVersion": "1.8",
+      "ignoreVersions": [],
+      "includeVersions": [],
+      "removedTime": [],
+      "recoveryServerTime": 1,
+      "maxRemovingCountServer": 3,
+      "addedDate": "Jun 15, 2018 6:08:19 PM",
+      "name": "VimeMC.ru",
+      "address": "mc.vimemc.ru:25565",
+      "hideAddress": true,
+      "acceptTextures": 1
+    },
+    {
+      "minVersion": "1.8",
+      "ignoreVersions": [],
+      "includeVersions": [],
+      "removedTime": [],
+      "recoveryServerTime": 1,
+      "maxRemovingCountServer": 3,
+      "addedDate": "May 12, 2018 3:01:44 PM",
+      "name": "SkyCave.ru",
+      "address": "mc.skycave.ru:25565",
+      "hideAddress": true,
+      "acceptTextures": 1
+    }
+  ],
+  "userServer": [],
+  "serverDatFile": [
+    {
+      "minVersion": "1.8",
+      "ignoreVersions": [],
+      "includeVersions": [],
+      "removedTime": [],
+      "recoveryServerTime": 1,
+      "maxRemovingCountServer": 3,
+      "addedDate": "Jun 15, 2018 6:08:19 PM",
+      "name": "VimeMC.ru",
+      "address": "mc.vimemc.ru:25565",
+      "hideAddress": true,
+      "acceptTextures": 1
+    },
+    {
+      "minVersion": "1.8",
+      "ignoreVersions": [],
+      "includeVersions": [],
+      "removedTime": [],
+      "recoveryServerTime": 1,
+      "maxRemovingCountServer": 3,
+      "addedDate": "May 12, 2018 3:01:44 PM",
+      "name": "SkyCave.ru",
+      "address": "mc.skycave.ru:25565",
+      "hideAddress": true,
+      "acceptTextures": 1
+    }
+  ],
+  "pageServerList": []
+}

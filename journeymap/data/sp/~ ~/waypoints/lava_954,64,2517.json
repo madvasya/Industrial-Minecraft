@@ -1,0 +1,18 @@
+{
+  "id": "lava_954,64,2517",
+  "name": "lava",
+  "icon": "waypoint-normal.png",
+  "x": 954,
+  "y": 64,
+  "z": 2517,
+  "r": 179,
+  "g": 206,
+  "b": 240,
+  "enable": true,
+  "type": "Normal",
+  "origin": "journeymap",
+  "dimensions": [
+    0
+  ],
+  "persistent": true
+}

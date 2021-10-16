@@ -1,0 +1,18 @@
+{
+  "id": "деревенька_724,69,1379",
+  "name": "деревенька",
+  "icon": "waypoint-normal.png",
+  "x": 724,
+  "y": 69,
+  "z": 1379,
+  "r": 254,
+  "g": 254,
+  "b": 51,
+  "enable": true,
+  "type": "Normal",
+  "origin": "journeymap",
+  "dimensions": [
+    0
+  ],
+  "persistent": true
+}

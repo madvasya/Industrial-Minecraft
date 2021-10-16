@@ -1,0 +1,15 @@
+{
+  "clientToken": "1d7d5344-20be-44a5-bb48-302d6b3ea643",
+  "accounts": {
+    "c34d63f690694838bbabdfe715811347": {
+      "username": "vasos",
+      "userID": "vasos",
+      "displayName": "vasos",
+      "uuid": "c34d63f690694838bbabdfe715811347",
+      "type": "free",
+      "premiumAccount": false
+    }
+  },
+  "selectedAccountUUID": "c34d63f690694838bbabdfe715811347",
+  "freeAccountUUID": "c34d63f690694838bbabdfe715811347"
+}

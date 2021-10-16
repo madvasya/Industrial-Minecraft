@@ -1,0 +1,215 @@
+---- Minecraft Crash Report ----
+
+WARNING: coremods are present:
+  ClientFixer (clientfixer-1.12.2-1.9.jar)
+  CTMCorePlugin (ctm-mc1.12-0.3.0.15.jar)
+  RBLoadingPlugin (RealBench-1.12.2-1.3.3.jar)
+  OpenModsCorePlugin (OpenModsLib-1.12.2-0.11.5.jar)
+  TLSkinCapeHookLoader (tlskincape_1.12.2-1.4.jar)
+Contact their authors BEFORE contacting forge
+
+// Don't be sad, have a hug! <3
+
+Time: 9/24/21 11:06 PM
+Description: There was a severe problem during mod loading that has caused the game to fail
+
+net.minecraftforge.fml.common.LoaderExceptionModCrash: Caught exception from CTM (ctm)
+Caused by: java.lang.VerifyError: Inconsistent stackmap frames at branch target 116
+Exception Details:
+  Location:
+    net/minecraftforge/client/model/ModelLoader$VanillaModelWrapper.getTextures()Ljava/util/Collection; @116: invokestatic
+  Reason:
+    Type 'net/minecraftforge/client/model/IModel' (current frame, locals[1]) is not assignable to 'net/minecraft/util/ResourceLocation' (stack map, locals[1])
+  Current Frame:
+    bci: @14
+    flags: { }
+    locals: { 'net/minecraftforge/client/model/ModelLoader$VanillaModelWrapper', 'net/minecraftforge/client/model/IModel' }
+    stack: { 'net/minecraftforge/client/model/IModel' }
+  Stackmap Frame:
+    bci: @116
+    flags: { }
+    locals: { 'net/minecraftforge/client/model/ModelLoader$VanillaModelWrapper', 'net/minecraft/util/ResourceLocation' }
+    stack: { }
+  Bytecode:
+    0x0000000: 2ab4 0044 b600 9b4c 2bb8 00b5 4c2b c600
+    0x0000010: 662a b400 44b4 00b8 c700 5c2b b600 9e12
+    0x0000020: bab6 00bb 9900 102a b400 44b8 00bf b500
+    0x0000030: b8a7 0043 2ab4 0044 2bbb 0080 59b7 0081
+    0x0000040: 12c1 b600 872b b600 8a12 c3b6 0087 2ab4
+    0x0000050: 0044 b600 8a12 c5b6 0087 b600 8db8 0093
+    0x0000060: b900 c901 002a ba00 db00 00b6 00e1 c000
+    0x0000070: 54b5 00b8 b800 e54d 2ab4 003d 2ab4 0044
+    0x0000080: b800 e999 004a b200 efb9 00f2 0100 4e2d
+    0x0000090: b900 6501 0099 0038 2db9 0069 0100 c000
+    0x00000a0: a23a 042a b400 4419 04b6 00f6 3a05 bb00
+    0x00000b0: 6b59 1905 b700 f93a 0619 0519 04b6 00bb
+    0x00000c0: 9a00 0a2c 1906 b600 fc57 a7ff c52a b400
+    0x00000d0: 44b4 0100 b901 0301 00b9 005d 0100 4e2d
+    0x00000e0: b900 6501 0099 002a 2db9 0069 0100 c000
+    0x00000f0: a23a 0419 0413 0105 b600 a69a 0011 2cbb
+    0x0000100: 006b 5919 04b7 00f9 b600 fc57 a7ff d32c
+    0x0000110: b601 09b0                              
+  Stackmap Table:
+    append_frame(@52,Object[#107])
+    same_frame(@116)
+    append_frame(@143,Object[#14],Object[#97])
+    same_frame(@202)
+    chop_frame(@205,1)
+    append_frame(@223,Object[#97])
+    same_frame(@268)
+    chop_frame(@271,1)
+
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:264)
+	at team.chisel.ctm.client.util.TextureMetadataHandler.<clinit>(TextureMetadataHandler.java:102)
+	at team.chisel.ctm.CTM.preInit(CTM.java:43)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at net.minecraftforge.fml.common.FMLModContainer.handleModStateEvent(FMLModContainer.java:637)
+	at sun.reflect.GeneratedMethodAccessor3.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.google.common.eventbus.Subscriber.invokeSubscriberMethod(Subscriber.java:91)
+	at com.google.common.eventbus.Subscriber$SynchronizedSubscriber.invokeSubscriberMethod(Subscriber.java:150)
+	at com.google.common.eventbus.Subscriber$1.run(Subscriber.java:76)
+	at com.google.common.util.concurrent.MoreExecutors$DirectExecutor.execute(MoreExecutors.java:399)
+	at com.google.common.eventbus.Subscriber.dispatchEvent(Subscriber.java:71)
+	at com.google.common.eventbus.Dispatcher$PerThreadQueuedDispatcher.dispatch(Dispatcher.java:116)
+	at com.google.common.eventbus.EventBus.post(EventBus.java:217)
+	at net.minecraftforge.fml.common.LoadController.sendEventToModContainer(LoadController.java:219)
+	at net.minecraftforge.fml.common.LoadController.propogateStateMessage(LoadController.java:197)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.google.common.eventbus.Subscriber.invokeSubscriberMethod(Subscriber.java:91)
+	at com.google.common.eventbus.Subscriber$SynchronizedSubscriber.invokeSubscriberMethod(Subscriber.java:150)
+	at com.google.common.eventbus.Subscriber$1.run(Subscriber.java:76)
+	at com.google.common.util.concurrent.MoreExecutors$DirectExecutor.execute(MoreExecutors.java:399)
+	at com.google.common.eventbus.Subscriber.dispatchEvent(Subscriber.java:71)
+	at com.google.common.eventbus.Dispatcher$PerThreadQueuedDispatcher.dispatch(Dispatcher.java:116)
+	at com.google.common.eventbus.EventBus.post(EventBus.java:217)
+	at net.minecraftforge.fml.common.LoadController.distributeStateMessage(LoadController.java:136)
+	at net.minecraftforge.fml.common.Loader.preinitializeMods(Loader.java:629)
+	at net.minecraftforge.fml.client.FMLClientHandler.beginMinecraftLoading(FMLClientHandler.java:252)
+	at net.minecraft.client.Minecraft.func_71384_a(Minecraft.java:467)
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:378)
+	at net.minecraft.client.main.Main.main(SourceFile:123)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_51, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 9588159808 bytes (9143 MB) / 10334765056 bytes (9856 MB) up to 10502537216 bytes (10016 MB)
+	JVM Flags: 8 total; -Xmn128M -Xmx9989M -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP 9.42 Powered by Forge 14.23.5.2855 Optifine OptiFine_1.12.2_HD_U_G5 64 mods loaded, 64 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State | ID                         | Version           | Source                                          | Signature                                |
+	|:----- |:-------------------------- |:----------------- |:----------------------------------------------- |:---------------------------------------- |
+	| LCH   | minecraft                  | 1.12.2            | minecraft.jar                                   | None                                     |
+	| LCH   | mcp                        | 9.42              | minecraft.jar                                   | None                                     |
+	| LCH   | FML                        | 8.0.99.99         | forge-1.12.2-14.23.5.2855.jar                   | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| LCH   | forge                      | 14.23.5.2855      | forge-1.12.2-14.23.5.2855.jar                   | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| LCH   | openmodscore               | 0.11.5            | minecraft.jar                                   | None                                     |
+	| LCH   | ClientFixer                | 1.12.2-1.9        | minecraft.jar                                   | None                                     |
+	| LCH   | ic2                        | 2.8.76-ex112      | industrialcraft-2-2.8.76-ex112.jar              | de041f9f6187debbc77034a344134053277aa3b0 |
+	| LCH   | advanced_solar_panels      | 4.2.0             | Advanced+Solar+Panels-4.2.0.jar                 | None                                     |
+	| LCH   | appliedenergistics2        | rv5-stable-11     | appliedenergistics2-rv5-stable-11.jar           | None                                     |
+	| LCH   | bibliocraft                | 2.4.3             | BiblioCraft[v2.4.3][MC1.12.0].jar               | None                                     |
+	| LCH   | jei                        | 4.9.1.179         | jei_1.12.2-4.9.1.179.jar                        | None                                     |
+	| LCH   | blockdrops                 | 1.4.0             | blockdrops-1.12.2-1.4.0.jar                     | None                                     |
+	| LCH   | codechickenlib             | 3.1.8.341         | CodeChickenLib-1.12.2-3.1.8.341-universal.jar   | f1850c39b2516232a2108a7bd84d1cb5df93b261 |
+	| LCH   | redstoneflux               | 2.0.1             | RedstoneFlux-1.12-2.0.1.2-universal.jar         | d4f1503fbacd9b9fb767720420c5395104239ec9 |
+	| LCH   | brandonscore               | 2.4.2             | BrandonsCore-1.12-2.4.2.157-universal.jar       | None                                     |
+	| LCH   | buildcraftlib              | 7.99.16           | buildcraft-7.99.16.jar                          | None                                     |
+	| LCH   | buildcraftcore             | 7.99.16           | buildcraft-7.99.16.jar                          | None                                     |
+	| LCH   | buildcraftbuilders         | 7.99.16           | buildcraft-7.99.16.jar                          | None                                     |
+	| LCH   | buildcraftenergy           | 7.99.16           | buildcraft-7.99.16.jar                          | None                                     |
+	| LCH   | buildcraftfactory          | 7.99.16           | buildcraft-7.99.16.jar                          | None                                     |
+	| LCH   | buildcraftrobotics         | 7.99.16           | buildcraft-7.99.16.jar                          | None                                     |
+	| LCH   | buildcrafttransport        | 7.99.16           | buildcraft-7.99.16.jar                          | None                                     |
+	| LCH   | buildcraftsilicon          | 7.99.16           | buildcraft-7.99.16.jar                          | None                                     |
+	| LCH   | ceramics                   | 1.12-1.3.4        | Ceramics-1.12-1.3.4.jar                         | None                                     |
+	| LCH   | chameleon                  | 1.12-4.1.3        | Chameleon-1.12-4.1.3.jar                        | None                                     |
+	| LCH   | chickenchunks              | 2.4.1.71          | ChickenChunks-1.12.2-2.4.1.71-universal.jar     | f1850c39b2516232a2108a7bd84d1cb5df93b261 |
+	| LCE   | ctm                        | MC1.12-0.3.0.15   | ctm-mc1.12-0.3.0.15.jar                         | None                                     |
+	| LC    | chisel                     | MC1.12.2-0.2.0.31 | Chisel-MC1.12.2-0.2.0.31.jar                    | None                                     |
+	| LC    | classiccombat              | 1.0.0             | ClassicCombat-1.12-1.0.0.jar                    | None                                     |
+	| LC    | cofhcore                   | 4.4.1             | CoFHCore-1.12.2-4.4.1.12-universal.jar          | None                                     |
+	| LC    | compactsolars              | 1.12.2-5.0.17.340 | CompactSolars-1.12.2-5.0.17.340-universal.jar   | None                                     |
+	| LC    | cucumber                   | 1.1.0             | cucumber-1.12-1.1.0.jar                         | None                                     |
+	| LC    | waila                      | 1.8.25            | Hwyla-1.8.25-B40_1.12.jar                       | None                                     |
+	| LC    | extracells                 | 2.5.13            | ExtraCells-1.12.2-2.5.13a56.jar                 | None                                     |
+	| LC    | forestry                   | 5.8.0.290         | forestry_1.12.2-5.8.0.290.jar                   | None                                     |
+	| LC    | cfm                        | 4.2.0             | furniture-4.2.0-1.12.2.jar                      | None                                     |
+	| LC    | gravestone                 | 1.0.15            | GraveStone-1.12.2-Graves-1.0.15.jar             | None                                     |
+	| LC    | gravestone-extended        | 1.3.0b6           | GraveStone-1.12.2-Extended-1.3.0b6.jar          | None                                     |
+	| LC    | ichunutil                  | 7.1.4             | iChunUtil-1.12.2-7.1.4.jar                      | None                                     |
+	| LC    | ironbackpacks              | 1.12.2-3.0.7-10   | IronBackpacks-1.12.2-3.0.7-10.jar               | None                                     |
+	| LC    | ironchest                  | 1.12.2-7.0.42.827 | ironchest-1.12.2-7.0.42.827.jar                 | None                                     |
+	| LC    | harvestcraft               | 1.12.2u           | Pam's+HarvestCraft+1.12.2u.jar                  | None                                     |
+	| LC    | jehc                       | 1.12.2            | JEHC-1.12.2-1.5.1.0.jar                         | None                                     |
+	| LC    | jeibees                    | 0.9.0.5           | jeibees-0.9.0.5-mc1.12.2.jar                    | None                                     |
+	| LC    | jeivillagers               | 1.0               | jeivillagers-1.12-1.0.2.jar                     | None                                     |
+	| LC    | journeymap                 | 1.12.2-5.5.2      | journeymap-1.12.2-5.5.2.jar                     | None                                     |
+	| LC    | jeresources                | 0.8.7.41          | JustEnoughResources-1.12.2-0.8.7.41.jar         | None                                     |
+	| LC    | mantle                     | 1.12-1.3.2.24     | Mantle-1.12-1.3.2.24.jar                        | None                                     |
+	| LC    | mcjtylib_ng                | 2.6.7             | mcjtylib-1.12-2.6.7.jar                         | None                                     |
+	| LC    | mobamputation              | 7.0.0             | MobAmputation-1.12.2-7.0.0.jar                  | None                                     |
+	| LC    | morebees                   | 1.12.2-1.4.4      | morebees-1.12.2-1.4.4.jar                       | None                                     |
+	| LC    | mousetweaks                | 2.8               | MouseTweaks-2.8-mc1.12.1.jar                    | None                                     |
+	| LC    | openmods                   | 0.11.5            | OpenModsLib-1.12.2-0.11.5.jar                   | d2a9a8e8440196e26a268d1f3ddc01b2e9c572a5 |
+	| LC    | storagedrawers             | 1.12-5.3.5        | StorageDrawers-1.12.2-5.3.6.jar                 | None                                     |
+	| LC    | thermalfoundation          | 2.4.1             | ThermalFoundation-1.12.2-2.4.1.15-universal.jar | 8a6abf2cb9e141b866580d369ba6548732eff25f |
+	| LC    | thermalexpansion           | 5.4.2             | ThermalExpansion-1.12.2-5.4.2.27-universal.jar  | 8a6abf2cb9e141b866580d369ba6548732eff25f |
+	| LC    | thermalcultivation         | 0.2.0             | ThermalCultivation-1.12.2-0.2.0.6-universal.jar | 8a6abf2cb9e141b866580d369ba6548732eff25f |
+	| LC    | thermalsolars              | 1.12.2 V1.6       | thermalsolars-1.12.2-1.6.jar                    | None                                     |
+	| LC    | tlauncher_custom_cape_skin | 1.4               | tlskincape_1.12.2-1.4.jar                       | None                                     |
+	| LC    | torohealthmod              | 1.12.2-11         | torohealth-1.12.2-11.jar                        | None                                     |
+	| LC    | treechopper                | 1.2.4             | TreeChopper-1.12.2-1.2.4.jar                    | None                                     |
+	| LC    | villagenames               | 2.0               | VillageNames-1.12.2-2.0.jar                     | None                                     |
+	| LC    | wailaharvestability        | 1.1.12            | WailaHarvestability-mc1.12-1.1.12.jar           | None                                     |
+	| LC    | wawla                      | 2.5.253           | Wawla-1.12.2-2.5.253.jar                        | d476d1b22b218a10d845928d1665d45fce301b27 |
+
+	Loaded coremods (and transformers): 
+ClientFixer (clientfixer-1.12.2-1.9.jar)
+  com.gamerforea.clientfixer.asm.ASMTransformer
+CTMCorePlugin (ctm-mc1.12-0.3.0.15.jar)
+  team.chisel.ctm.client.asm.CTMTransformer
+RBLoadingPlugin (RealBench-1.12.2-1.3.3.jar)
+  pw.prok.realbench.asm.RBTransformer
+OpenModsCorePlugin (OpenModsLib-1.12.2-0.11.5.jar)
+  openmods.core.OpenModsClassTransformer
+TLSkinCapeHookLoader (tlskincape_1.12.2-1.4.jar)
+  gloomyfolken.hooklib.minecraft.PrimaryClassTransformer
+	GL info: ' Vendor: 'NVIDIA Corporation' Version: '4.6.0 NVIDIA 461.40' Renderer: 'GeForce GTX 1060 3GB/PCIe/SSE2'
+	OpenModsLib class transformers: [llama_null_fix:FINISHED],[horse_base_null_fix:FINISHED],[pre_world_render_hook:FINISHED],[player_render_hook:ENABLED],[horse_null_fix:FINISHED]
+	AE2 Version: stable rv5-stable-11 for Forge 14.23.1.2554
+	OptiFine Version: OptiFine_1.12.2_HD_U_G5
+	OptiFine Build: 20210124-142939
+	Render Distance Chunks: 26
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	Shaders: null
+	OpenGlVersion: 4.6.0 NVIDIA 461.40
+	OpenGlRenderer: GeForce GTX 1060 3GB/PCIe/SSE2
+	OpenGlVendor: NVIDIA Corporation
+	CpuCount: 4

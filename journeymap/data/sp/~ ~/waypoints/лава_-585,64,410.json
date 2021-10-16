@@ -1,0 +1,18 @@
+{
+  "id": "лава_-585,64,410",
+  "name": "лава",
+  "icon": "waypoint-normal.png",
+  "x": -585,
+  "y": 64,
+  "z": 410,
+  "r": 81,
+  "g": 192,
+  "b": 246,
+  "enable": true,
+  "type": "Normal",
+  "origin": "journeymap",
+  "dimensions": [
+    0
+  ],
+  "persistent": true
+}
